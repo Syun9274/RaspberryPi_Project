@@ -46,13 +46,13 @@ if __name__ == "__main__":
 
             # 가운데(또는 왼쪽과 오른쪽 센서 동시에) 물체가 인식되었을 때
             if (distL <= 60 and distR <= 60) or distM <= 60:
-                            pwmLeft.start(10.0)
-                            time.sleep(0.25)
-                            pwmLeft.stop()
-                            pwmRight.start(10.0)
-                            time.sleep(0.25)
-                            pwmRight.stop()
-                            delay(min(distL, distM, distR))
+                pwmLeft.start(10.0)
+                time.sleep(0.25)
+                pwmLeft.stop()
+                pwmRight.start(10.0)
+                time.sleep(0.25)
+                pwmRight.stop()
+                delay(min(distL, distM, distR))
             
             # 왼쪽 센서에만 물체가 인식되었을 때
             elif distL <= 60:
