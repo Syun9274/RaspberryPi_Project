@@ -21,7 +21,7 @@ def readChannel(channel):
     data = ((val[1] & 3) << 8) + val[2]
     return data
 
-# 채널에서 데이터 값을 받아오고 이를 사용한 센서()에 맞는 거리변환 공식 사용
+# 채널에서 데이터 값을 받아오고 이를 사용한 센서(GP2YOA21)에 맞는 거리변환 공식 사용
 def distance(channel):
     vol = readChannel(channel) / 1023.0 * 3.3
     distance = (16.2537 * vol**4 - 129.893 * vol**3 + 382.268 * vol**2 - 512.611 * vol + 301.439) / 2
